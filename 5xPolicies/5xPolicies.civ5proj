@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Deploy" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Default</Configuration>
+    <ProjectGuid>{14a858b8-4ae0-4f32-928f-9e94768d7975}</ProjectGuid>
+    <Name>5xPolicies</Name>
+    <Guid>7df02344-410a-430f-bd11-8ec4b74cd0cc</Guid>
+    <ModVersion>6</ModVersion>
+    <Stability>Experimental</Stability>
+    <Teaser>This Mod make all Policies have 500% Powers.</Teaser>
+    <Description>--This Mod makes all Policies have 500% Powers. (without units (like worker and colonists) But contain Great person)
+--Some data may be invalid. If you find. Please tell me. I will fix it.
+
+--Warning: I am not modifying any language files.
+--If you find the game UI doesn't have any changes. This is not a bug.
+--Game and DLC have a lot of Texts with same variable.
+--So if I modify them. Maybe it has more mistakes.
+--Thank you for your understanding.
+
+--If you want modify multiple. Please find this mod's folder."5Xpolicies.sql" is game data. It has more explains.
+--You can use notepad++ or other editor make this.
+
+--If you have any questions or bugs. Please tell me. I will improve it.
+--Thank you. Have fun!
+
+github:https://github.com/HaoJun0823/Civ5-5xPolicies</Description>
+    <Authors>HaoJun0823</Authors>
+    <SpecialThanks>All players and modders.</SpecialThanks>
+    <AffectsSavedGames>true</AffectsSavedGames>
+    <MinCompatibleSaveVersion>0</MinCompatibleSaveVersion>
+    <SupportsSinglePlayer>true</SupportsSinglePlayer>
+    <SupportsMultiplayer>true</SupportsMultiplayer>
+    <SupportsHotSeat>true</SupportsHotSeat>
+    <SupportsMac>true</SupportsMac>
+    <AssemblyName>5XPolicies</AssemblyName>
+    <RootNamespace>5XPolicies</RootNamespace>
+    <ModReferences />
+    <ModActions>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
+        <FileName>5XPolicies.sql</FileName>
+      </Action>
+    </ModActions>
+    <Homepage>https://steamcommunity.com/id/HaoJun0823/</Homepage>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Default' ">
+    <OutputPath>.</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Package Only' ">
+    <PackageMod>true</PackageMod>
+    <DeployMod>false</DeployMod>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Deploy Only' ">
+    <PackageMod>false</PackageMod>
+    <DeployMod>true</DeployMod>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="5xPolicies.sql">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>False</ImportIntoVFS>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Firaxis\ModBuddy\Civ5Mod.targets" />
+</Project>
